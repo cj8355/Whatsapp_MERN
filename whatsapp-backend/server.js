@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import Messages from './dbMessages.js';
 import Pusher from 'pusher';
 import cors from 'cors';
+import  dotenv from "./.env";
+
 
 // App config
 const app = express();
@@ -17,14 +19,14 @@ app.use(cors());
 
 const pusher = new Pusher({
     appId: "1340284",
-    key: "8d93cea93a16afc0c97c",
-    secret: "03b74ea46629eed65d22",
+    key: process.env.PUSHER_KEY, 
+    secret: process.env.PUSHER_SECRET,
     cluster: "us3",
     useTLS: true
   });
 
 // DB config
-const connection_url = 'mongodb+srv://ccallender:Mariokart65@cluster0.07ubg.mongodb.net/WhatsappDB?retryWrites=true&w=majority';
+const connection_url = process.env.MONGO_URL;
 
 mongoose.connect(connection_url, {
     
