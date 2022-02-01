@@ -5,6 +5,7 @@ import Chat from "./Chat";
 import Pusher from 'pusher-js';
 import axios from "./axios";
 
+
 function App() {
   const [messages, setMessages] = useState([]);
 
@@ -16,7 +17,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const pusher = new Pusher('8d93cea93a16afc0c97c', {
+    const pusher = new Pusher(process.env.REACT_APP_PUSHER_KEY, {
       cluster: 'us3'
     });
 

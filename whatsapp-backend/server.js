@@ -1,12 +1,12 @@
 // Importing
 import express from 'express';
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import Messages from './dbMessages.js';
 import Pusher from 'pusher';
 import cors from 'cors';
-import dotenv from 'dotenv';
 dotenv.config();
-s
+
 
 // App config
 const app = express();
@@ -72,8 +72,8 @@ app.get('/messages/sync', (req, res) => {
     } else {
         res.status(200).send(data)
     }
-    })
-})
+    });
+});
 
 app.post('/messages/new', (req, res) => {
     const dbMessage = req.body
