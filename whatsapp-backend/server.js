@@ -10,7 +10,7 @@ dotenv.config();
 
 // App config
 const app = express();
-const port = process.env.port || 9000;
+const PORT = process.env.PORT  || 9000;
 
 // Middleware
 app.use(express.json());
@@ -28,7 +28,7 @@ const pusher = new Pusher({
 
 // DB config
 const connection_url = process.env.REACT_APP_MONGO_URL;
-console.log(`This is th var ${connection_url}`);
+//console.log(`This is th var ${connection_url}`);
 
 mongoose.connect(connection_url);
 
@@ -89,4 +89,4 @@ app.post('/messages/new', (req, res) => {
 
 
 // Listen
-app.listen(port, () => console.log(`Listening on localhost:${port}`));
+app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
