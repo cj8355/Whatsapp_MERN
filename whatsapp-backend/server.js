@@ -68,7 +68,7 @@ app.get('/', (req,res) => res.status(200).send("HELLO WROLD!!"));
 app.get('/messages/sync', (req, res) => {
     Messages.find((err, data) => {
     if (err) {
-        res.status(500).send(err)
+        res.status(500).send(err)a
     } else {
         res.status(200).send(data)
     }
