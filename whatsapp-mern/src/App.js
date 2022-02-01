@@ -13,7 +13,7 @@ function App() {
     axios.get('/messages/sync')
     .then((response) => {
       setMessages(response.data)
-    });a
+    });
   }, []);
 
   useEffect(() => {
