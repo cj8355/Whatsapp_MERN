@@ -4,7 +4,8 @@ import mongoose from 'mongoose';
 import Messages from './dbMessages.js';
 import Pusher from 'pusher';
 import cors from 'cors';
-import  dotenv from "./.env";
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 // App config
@@ -19,18 +20,17 @@ app.use(cors());
 
 const pusher = new Pusher({
     appId: "1340284",
-    key: process.env.PUSHER_KEY, 
-    secret: process.env.PUSHER_SECRET,
+    key: process.env.REACT_APP_PUSHER_KEY, 
+    secret: process.env.REACT_APP_PUSHER_SECRET,
     cluster: "us3",
     useTLS: true
   });
 
 // DB config
-const connection_url = process.env.MONGO_URL;
+const connection_url = process.env.REACT_APP_MONGO_URL;
+console.log(`This is th var ${connection_url}`);
 
-mongoose.connect(connection_url, {
-    
-});
+mongoose.connect(connection_url);
 
 
 const db = mongoose.connection;
