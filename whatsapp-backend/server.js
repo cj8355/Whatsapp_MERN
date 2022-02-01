@@ -6,7 +6,7 @@ import Pusher from 'pusher';
 import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
-s
+
 
 // App config
 const app = express();
