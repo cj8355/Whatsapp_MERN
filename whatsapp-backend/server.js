@@ -13,6 +13,7 @@ const app = express();
 const PORT = process.env.PORT  || 9000;
 
 // Middleware
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
@@ -30,9 +31,12 @@ const pusher = new Pusher({
 const connection_url = process.env.REACT_APP_MONGO_URL;
 console.log(`This is th var ${connection_url}`);
 
-mongoose.connect(connection_url, {
+mongoose.connect(connection_url || 'mongodb://localhost/floating-citadel-29592', 
+{
     useNewUrlParser: "true",
-    useUnifiedTopology: "true"
+    useUnifiedTopology: "true",
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 mongoose.connection.on("connected", (err, res) => {
