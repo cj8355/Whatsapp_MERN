@@ -31,7 +31,7 @@ const pusher = new Pusher({
 const connection_url = process.env.REACT_APP_MONGO_URL;
 console.log(`This is th var ${connection_url}`);
 
-mongoose.connect(connection_url || 'mongodb://localhost/floating-citadel-29592', 
+mongoose.connect(connection_url, 
 {
     useNewUrlParser: "true",
     useUnifiedTopology: "true"
