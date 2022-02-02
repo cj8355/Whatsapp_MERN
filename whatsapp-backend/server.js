@@ -34,9 +34,7 @@ console.log(`This is th var ${connection_url}`);
 mongoose.connect(connection_url || 'mongodb://localhost/floating-citadel-29592', 
 {
     useNewUrlParser: "true",
-    useUnifiedTopology: "true",
-    useCreateIndex: true,
-    useFindAndModify: false
+    useUnifiedTopology: "true"
 });
 
 mongoose.connection.on("connected", (err, res) => {
