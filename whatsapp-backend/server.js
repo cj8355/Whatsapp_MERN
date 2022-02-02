@@ -28,10 +28,9 @@ const pusher = new Pusher({
   });
 
 // DB config
-const connection_url = process.env.REACT_APP_MONGO_URL;
-console.log(`This is th var ${connection_url}`);
+console.log(`This is the var ${process.env.REACT_APP_MONGO_URL}`);
 
-mongoose.connect(connection_url, 
+mongoose.connect(process.env.REACT_APP_MONGO_URL, 
 {
     useNewUrlParser: "true",
     useUnifiedTopology: "true"
