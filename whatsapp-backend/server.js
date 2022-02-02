@@ -28,9 +28,19 @@ const pusher = new Pusher({
 
 // DB config
 const connection_url = process.env.REACT_APP_MONGO_URL;
-//console.log(`This is th var ${connection_url}`);
+console.log(`This is th var ${connection_url}`);
 
-mongoose.connect(connection_url);
+mongoose.connect(connection_url, {
+    useNewUrlParser: "true",
+    useUnifiedTopology: "true"
+});
+
+mongoose.connection.on("connected", (err, res) => {
+
+    console.log("mongoose is connected")
+  
+  });
+  
 
 
 const db = mongoose.connection;
@@ -63,7 +73,7 @@ db.once('open', () => {
 
 
 // API routes
-app.get('/', (req,res) => res.status(200).send("HELLO WROLD!!"));
+app.get('/', (req,res) => res.status(200).send("Route OK"));
 
 app.get('/messages/sync', (req, res) => {
     Messages.find((err, data) => {
@@ -84,8 +94,8 @@ app.post('/messages/new', (req, res) => {
         } else {
             res.status(201).send(`new message created: \n ${data}`)
         }
-    })
-})
+    });
+});
 
 
 // Listen
