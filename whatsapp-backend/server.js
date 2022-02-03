@@ -28,13 +28,13 @@ const pusher = new Pusher({
   });
 
 // DB config
-console.log(`This is the var ${process.env.REACT_APP_MONGO_URL}`);
+//console.log(`This is the var ${process.env.REACT_APP_MONGO_URL}`);
 
 mongoose.connect(process.env.REACT_APP_MONGO_URL, 
 {
     useNewUrlParser: "true",
     useUnifiedTopology: "true"
-});
+})/*.toString()*/;
 
 mongoose.connection.on("connected", (err, res) => {
 
