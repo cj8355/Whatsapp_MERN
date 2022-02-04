@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import Messages from './dbMessages.js';
 import Pusher from 'pusher';
 import cors from 'cors';
+import path from 'path';
 dotenv.config();
 
 
@@ -74,7 +75,11 @@ db.once('open', () => {
 
 
 // API routes
-app.get('/', (req,res) => res.status(200).send("Route OK"));
+app.get('/', (req,res) => {
+res.status(200).send("Route OK");
+res.sendFile(path.join(__dirname, '../whatsapp-mern/build/index.html'));
+
+});
 
 app.get('/messages/sync', (req, res) => {
     Messages.find((err, data) => {
@@ -87,7 +92,7 @@ app.get('/messages/sync', (req, res) => {
 });
 
 app.post('/messages/new', (req, res) => {
-    const dbMessage = req.body
+    const dbMessage = req.body;
 
     Messages.create(dbMessage, (err, data) => {
         if(err) {
