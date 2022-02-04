@@ -72,7 +72,7 @@ db.once('open', () => {
 
     });
 });
-
+app.use(express.static(path.join(__dirname, '../whatsapp-mern/build')));
 
 // API routes
 app.get('/', (req,res) => {
