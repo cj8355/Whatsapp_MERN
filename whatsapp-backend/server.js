@@ -12,7 +12,7 @@ dotenv.config();
 // App config
 const app = express();
 const PORT = process.env.PORT  || 9000;
-//const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
