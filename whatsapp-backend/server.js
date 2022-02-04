@@ -17,7 +17,7 @@ const __dirname = path.resolve();
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('build'));
+app.use(express.static('public'));
 app.use(cors());
 
 
