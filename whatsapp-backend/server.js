@@ -67,7 +67,7 @@ db.once('open', () => {
             }
             );
         } else {
-            console.log('Error triggering pusher')a
+            console.log('Error triggering pusher')
         }
 
     });
