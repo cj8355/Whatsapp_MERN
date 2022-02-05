@@ -17,7 +17,7 @@ const __dirname = path.resolve();
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+//app.use(express.static('build'));
 app.use(cors());
 
 
@@ -74,7 +74,10 @@ db.once('open', () => {
 
     });
 });
+
+if (process.env.NODE_ENV === 'production') {
 app.use(express.static(path.join(__dirname, '../whatsapp-mern/build')));
+};
 
 // API routes
 app.get('*', (req,res) => {
