@@ -80,7 +80,7 @@ app.use(express.static(path.join(__dirname, '../whatsapp-mern/build')));
 };
 
 // API routes
-app.get('*', (req,res) => {
+app.get('/', (req,res) => {
 res.status(200).send("Route OK");
 res.sendFile(path.join(__dirname, '../whatsapp-mern/build/index.html'));
 
