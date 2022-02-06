@@ -89,7 +89,7 @@ res.sendFile(path.join(__dirname, '../whatsapp-mern/build/index.html'));
 app.get('/messages/sync', (req, res) => {
     Messages.find((err, data) => {
     if (err) {
-        res.status(500).send(err)
+        res.status(500).send(err)a
     } else {
         res.status(200).send(data)
     }
