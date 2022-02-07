@@ -1,13 +1,11 @@
 # Whatsapp-KO
 
 
-## Badges
-
-
 ## Screenshots/Gif
 
 
 ## Description
+WhatsApp messenger clone
 
 
 ### Table of Contents
@@ -16,11 +14,11 @@
 **[Installation Instructions](#Installation)**<br>
 **[Technology Used](#Technology-Used)**<br>
 **[Usage](#Usage)**<br>
-**[Collaborators](#Collaborators)**<br>
+
 
 
 ## Link
-Link: 
+Link: https://floating-citadel-29592.herokuapp.com/
 
 ## Installation
 
@@ -33,7 +31,7 @@ Run npm start/npm run develop
 
 
 ## Technology Used
-MERN, GraphQl, Heroku, JWT
+MERN
 
 
 ## Usage
@@ -41,6 +39,5 @@ Send a message to another user by first searching for them and then typing your 
 Create an account by 
 
 
-## Collaborators
-Miles Beler, Github: MBeler
+
 
